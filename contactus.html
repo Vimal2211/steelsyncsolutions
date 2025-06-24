@@ -230,9 +230,8 @@
                                             const templateParams = {
                                                 from_name: name,
                                                 from_email: email,
-                                                from_message: message
+                                                from_message: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
                                             };
-                                            console.log('templateParams: ', templateParams);
 
                                             emailjs.send('service_7gjhxeq', 'template_wf4ivnl', templateParams)
                                                 .then(function (response) {
@@ -246,6 +245,8 @@
                                                         position: "right", // or 'left', 'center'
                                                         backgroundColor: "#4BB543",
                                                     }).showToast();
+                                                    // Show your custom success div
+                                                    document.getElementById('successMessage').style.display = 'block';
                                                     document.getElementById('myForm').reset();
                                                 }, function (error) {
                                                     console.log('FAILED...', error);
@@ -269,7 +270,7 @@
     <input type="email" id="email" name="email"><br><br>
     <input type="submit" value="Submit">
 </form> -->
-                                    <div class="success-state w-form-done">
+                                    <div id="successMessage" class="success-state w-form-done">
                                         <div>Thank you! Your submission has been received!</div>
                                     </div>
                                     <!-- <div class="error-empty-state w-form-fail">
