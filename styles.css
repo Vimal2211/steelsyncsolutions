@@ -2363,8 +2363,10 @@ img {
 }
 
 .button-primary-outline:hover {
-    background-color: var(--color-white);
-    color: var(--color-primary)
+    /* background-color: var(--color-white);
+    color: var(--color-primary) */
+    background-color: var(--color-primary);
+    color: var(--color-white)
 }
 
 .utilities-section-content {
@@ -5618,4 +5620,44 @@ img {
   border-top-left-radius: 50% 30%;
   border-top-right-radius: 50% 30%;
   object-fit: cover;
+}
+
+
+.hero-overlay {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* full screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* darken for text visibility */
+}
+
+.background-primary-overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.home-hero-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
